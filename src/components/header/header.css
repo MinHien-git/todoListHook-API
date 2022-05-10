@@ -1,0 +1,39 @@
+.primary-header {
+  width: 100%;
+}
+
+.primary-header > * {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  margin: 0;
+  padding: 0.8rem 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.primary-header ul {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+  justify-content: flex-start;
+}
+
+.primary-header ul > * {
+  margin-right: 0.6rem;
+}
+
+.primary-header button {
+  padding: 0;
+}
+
+#count {
+  font-size: 0.875rem;
+}
+
+li.active button {
+  text-decoration: underline;
+}
+
+#clear {
+  margin-left: auto;
+  margin-right: 0;
+  padding: 0.2rem 0.5rem;
+}

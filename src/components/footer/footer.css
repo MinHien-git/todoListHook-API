@@ -1,0 +1,38 @@
+.primary-footer {
+  height: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  --vertical: 1rem;
+}
+
+#add-btn {
+  height: 2rem;
+  aspect-ratio: 1;
+  border-radius: 2rem;
+  position: relative;
+}
+
+#add-btn > span {
+  display: block;
+  background-color: white;
+  height: 3px;
+  width: 1rem;
+  position: absolute;
+  left: 25%;
+  border-radius: 1rem;
+  top: 45%;
+}
+
+#add-btn > span:nth-child(2) {
+  transform: rotate(90deg);
+}
+
+input[type="text"] {
+  border-radius: 2rem;
+  height: 2rem;
+  width: 72%;
+  border: 0;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  padding-left: 1rem;
+}
