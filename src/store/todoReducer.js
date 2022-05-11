@@ -2,8 +2,10 @@ import {v4 as uuidv4} from 'uuid'
 
 const initialState = {
     todo: [],
-    edit: {id : 0,title : ""}
+    edit : {id : 0,title : ""},
+    mode: "all"
 }
+
 const todoReducer = (state = initialState,action) => {
     const {type,payLoad} = action
     
@@ -48,6 +50,12 @@ const todoReducer = (state = initialState,action) => {
             const newState = {...state};
             newState.todo = []
             newState.edit = {id : 0,title : ""}
+            return newState
+        }
+        case "filterTodoItem": 
+        {
+            const newState = {...state};
+            newState.mode = payLoad;
             return newState
         }
         default:

@@ -5,8 +5,7 @@ const api = axios.create({
 })
 
 const getData = api.get('/').then(res => {
-    console.log(res.data)
-    return [...res.data]
+    return res.data
 })
 
 export default getData

@@ -1,22 +1,38 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import getData from "../data/data";
 import Todo from "./todo";
-import "./todobody.css"
+import "./todobody.css";
 
 const TodoBody = () => {
-    const datas = useSelector(item => item.todo)
-    const [data,setData] = useState([]);
+  const fetchDatas = useSelector((item) => item.todo);
+  const [data, setData] = useState([]);
+  let mode = useSelector((item) => item.mode);
+  useEffect(() => {
+    switch (mode) {
+      case "all":
+        setData(() => fetchDatas);
+        break;
+      case "pending":
+        setData(() => fetchDatas.filter((item) => !item.complete));
+        break;
+      case "completed":
+        setData(() => fetchDatas.filter((item) => item.complete));
+        break;
+      default:
+        setData(() => fetchDatas);
+        break;
+    }
+  }, [fetchDatas, mode]);
 
-    useEffect(()=> {setData(getData)},[])
-
-    return(
-        <main className="primary-body">
-            <ul>
-                {datas.map(item =><Todo key ={item.id} data ={item} /> )}
-            </ul>
-        </main>
-    )
-}
+  return (
+    <main className="primary-body">
+      <ul>
+        {data.map((item) => (
+          <Todo key={item.id} data={item} />
+        ))}
+      </ul>
+    </main>
+  );
+};
 
 export default TodoBody;

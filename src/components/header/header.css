@@ -28,7 +28,8 @@
   font-size: 0.875rem;
 }
 
-li.active button {
+button:active,
+button:focus {
   text-decoration: underline;
 }
 
